@@ -10,15 +10,15 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN PB4 // P4 en placa Digispark ATtiny85
+#define LED_PIN PB4 // Se define LED en el pin PB4 en placa Digispark ATtiny85
 
 int main(void)
 {
-	DDRB |= (1 << PB4); // Configurar PB0 como salida
+	DDRB |= (1 << LED_PIN); // Configurar LED_PIN (PB4) como salida
 	
 	/* Replace with your application code */
 	while (1) {
-		PORTB ^= (1 << PB4); // Cambiar el estado de PB0
+		PORTB ^= (1 << LED_PIN); // Cambiar el estado de LED_PIN (PB4) 
 		_delay_ms(500);      // Esperar 500 milisegundos
 	}
 	
